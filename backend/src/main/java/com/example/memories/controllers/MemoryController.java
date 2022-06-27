@@ -2,11 +2,9 @@ package com.example.memories.controllers;
 
 import com.example.memories.models.dtos.CreateMemoryRequest;
 import com.example.memories.models.dtos.MemoryResponse;
-import com.example.memories.models.entities.Memory;
 import com.example.memories.services.MemoryService;
 import org.springframework.web.bind.annotation.*;
 
-import javax.ws.rs.Path;
 import java.util.List;
 
 @RestController
