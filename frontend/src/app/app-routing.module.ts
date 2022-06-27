@@ -5,6 +5,8 @@ import {MemoriesContainerComponent} from "./features/memories/containers/memorie
 import {HomeComponent} from "./features/home/home.component";
 import {MainComponent} from "./features/main/main.component";
 import {MemoriesResolver} from "./resolvers/memories.resolver";
+import {MemoryContainerComponent} from "./features/memory/containers/memory-container/memory-container.component";
+import {MemoryResolver} from "./resolvers/memory.resolver";
 
 const routes: Routes = [
   {
@@ -17,10 +19,22 @@ const routes: Routes = [
       },
       {
         path: "memories",
-        component: MemoriesContainerComponent,
-        resolve: {
-          "memories": MemoriesResolver
-        }
+        children: [
+          {
+            path: "",
+            component: MemoriesContainerComponent,
+            resolve: {
+              "memories": MemoriesResolver
+            }
+          },
+          {
+            path: ":id",
+            component: MemoryContainerComponent,
+            resolve: {
+              "memory": MemoryResolver
+            }
+          }
+        ]
       }
     ]
   }

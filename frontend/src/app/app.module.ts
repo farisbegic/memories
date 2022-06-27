@@ -11,12 +11,14 @@ import {MemoriesComponent} from './features/memories/components/memories/memorie
 import {MemoriesContainerComponent} from './features/memories/containers/memories-container/memories-container.component';
 import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
-import { HomeComponent } from './features/home/home.component';
-import { MainComponent } from './features/main/main.component';
+import {HomeComponent} from './features/home/home.component';
+import {MainComponent} from './features/main/main.component';
 import {MemoryService} from "./services/memory.service";
 import {MemoriesResolver} from "./resolvers/memories.resolver";
 import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
+import {MemoryComponent} from "./features/memory/components/memory/memory.component";
+import {MemoryContainerComponent} from './features/memory/containers/memory-container/memory-container.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {MatCardModule} from "@angular/material/card";
     MemoriesComponent,
     MemoriesContainerComponent,
     HomeComponent,
-    MainComponent
+    MainComponent,
+    MemoryComponent,
+    MemoryContainerComponent
   ],
   imports: [
     AppRoutingModule,

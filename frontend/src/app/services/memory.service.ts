@@ -15,4 +15,8 @@ export class MemoryService {
   public getMemories() {
     return this.httpClient.get<MemoryModel[]>(this.apiUrl);
   }
+
+  public getMemory(id: string) {
+    return this.httpClient.get<MemoryModel>(`${this.apiUrl}/${id}`);
+  }
 }
