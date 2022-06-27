@@ -1,0 +1,10 @@
+.memories-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 50px;
+}
+
+.example-card {
+  max-width: 400px;
+}
