@@ -19,6 +19,11 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
 import {MemoryComponent} from "./features/memory/components/memory/memory.component";
 import {MemoryContainerComponent} from './features/memory/containers/memory-container/memory-container.component';
+import { MemoryFormComponent } from './features/memory-form/components/memory-form/memory-form.component';
+import { MemoryFormContainerComponent } from './features/memory-form/containers/memory-form-container/memory-form-container.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,7 +34,9 @@ import {MemoryContainerComponent} from './features/memory/containers/memory-cont
     HomeComponent,
     MainComponent,
     MemoryComponent,
-    MemoryContainerComponent
+    MemoryContainerComponent,
+    MemoryFormComponent,
+    MemoryFormContainerComponent
   ],
   imports: [
     AppRoutingModule,
@@ -40,7 +47,10 @@ import {MemoryContainerComponent} from './features/memory/containers/memory-cont
     MatIconModule,
     RouterModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [
     MemoryService,

@@ -1,0 +1,13 @@
+.form-container {
+  width: 700px;
+  margin: 100px auto;
+}
+
+.form-container form {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.example-container .mat-form-field + .mat-form-field {
+  width: 100%;
+}
