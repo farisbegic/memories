@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import { environment } from 'src/environments/environment.prod';
 import {MemoryModel} from "../models/memory.model";
 import {SimpleMemoryModel} from "../models/simple-memory.model";
+import {Observable, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ import {SimpleMemoryModel} from "../models/simple-memory.model";
 export class MemoryService {
 
   private apiUrl = `${environment.apiUrl}/memories`;
+  private _deleteOperationSuccessfulEvent$: Subject<boolean> = new Subject();
 
   constructor(private httpClient: HttpClient) { }
 
@@ -23,5 +25,13 @@ export class MemoryService {
 
   public createMemory(memory: SimpleMemoryModel) {
     return this.httpClient.post<SimpleMemoryModel>(this.apiUrl, memory);
+  }
+
+  public deleteMemory(id: number) {
+    return this.httpClient.delete<MemoryModel>(`${this.apiUrl}/${id}`);
+  }
+
+  get deleteOperationSuccessfulEvent$(): Observable<boolean> {
+    return this._deleteOperationSuccessfulEvent$.asObservable();
   }
 }

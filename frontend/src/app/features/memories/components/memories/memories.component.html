@@ -11,6 +11,7 @@
         </mat-card-content>
         <mat-card-actions>
           <button mat-button routerLink="/memories/{{memory.id}}">VIEW</button>
+          <button mat-button color="warn" (click)="delete(memory.id)">DELETE</button>
         </mat-card-actions>
       </mat-card>
     </div>

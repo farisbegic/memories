@@ -8,7 +8,6 @@ import {MemoriesResolver} from "./resolvers/memories.resolver";
 import {MemoryContainerComponent} from "./features/memory/containers/memory-container/memory-container.component";
 import {MemoryResolver} from "./resolvers/memory.resolver";
 import {MemoryFormContainerComponent} from "./features/memory-form/containers/memory-form-container/memory-form-container.component";
-import {MemoryFormComponent} from "./features/memory-form/components/memory-form/memory-form.component";
 
 const routes: Routes = [
   {
@@ -29,6 +28,7 @@ const routes: Routes = [
           {
             path: "",
             component: MemoriesContainerComponent,
+            runGuardsAndResolvers: "paramsOrQueryParamsChange",
             resolve: {
               "memories": MemoriesResolver
             }
