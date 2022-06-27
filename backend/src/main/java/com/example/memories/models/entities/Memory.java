@@ -1,4 +1,4 @@
-package com.example.memories.models;
+package com.example.memories.models.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,6 +25,8 @@ public class Memory {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "image", cascade = CascadeType.ALL)
-    private List<MemoryImage> memoryImages;
+    public Memory(String title, String description) {
+        this.title = title;
+        this.description = description;
+    }
 }
