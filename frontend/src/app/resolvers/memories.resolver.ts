@@ -12,7 +12,6 @@ export class MemoriesResolver implements Resolve<MemoryModel[]> {
   constructor(private memoryService: MemoryService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<MemoryModel[]> {
-    console.log(this.memoryService.getMemories());
     return this.memoryService.getMemories();
   }
 }
