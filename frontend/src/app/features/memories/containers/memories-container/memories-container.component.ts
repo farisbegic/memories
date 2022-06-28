@@ -22,7 +22,7 @@ export class MemoriesContainerComponent implements OnInit {
   deleteMemory(id: number): void {
     this.memoryService.deleteMemory(id).subscribe(data => {
       this.data.map(memory => {
-        if (memory.id === data.id) {
+        if (memory.id == data.id) {
           this.data.splice(this.data.indexOf(memory), 1);
         }
       })
