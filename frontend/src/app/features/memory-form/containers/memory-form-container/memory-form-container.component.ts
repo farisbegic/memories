@@ -28,12 +28,12 @@ export class MemoryFormContainerComponent implements OnInit {
   public createMemory(memory: SimpleMemoryModel): void {
     if (this.isEditing) {
       this.memoryService.updateMemory(this.memory?.id, memory).subscribe(() => {
-        this.router.navigate(['/memories']);
+        this.router.navigate(['/']);
       })
     }
     else {
       this.memoryService.createMemory(memory).subscribe(() => {
-        this.router.navigate(['/memories']);
+        this.router.navigate(['/']);
       })
     }
   }
