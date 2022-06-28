@@ -26,9 +26,15 @@ const routes: Routes = [
             component: MemoryFormContainerComponent
           },
           {
+            path: "edit/:id",
+            component: MemoryFormContainerComponent,
+            resolve: {
+              "memory": MemoryResolver
+            }
+          },
+          {
             path: "",
             component: MemoriesContainerComponent,
-            runGuardsAndResolvers: "paramsOrQueryParamsChange",
             resolve: {
               "memories": MemoriesResolver
             }

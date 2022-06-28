@@ -31,7 +31,7 @@ export class MemoryService {
     return this.httpClient.delete<MemoryModel>(`${this.apiUrl}/${id}`);
   }
 
-  get deleteOperationSuccessfulEvent$(): Observable<boolean> {
-    return this._deleteOperationSuccessfulEvent$.asObservable();
+  public updateMemory(id: number | undefined , memory: SimpleMemoryModel) {
+    return this.httpClient.put<MemoryModel>(`${this.apiUrl}/${id}`, memory);
   }
 }

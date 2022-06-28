@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MemoryModel} from "../../../../models/memory.model";
 import {SimpleMemoryModel} from "../../../../models/simple-memory.model";
@@ -11,14 +11,15 @@ import {SimpleMemoryModel} from "../../../../models/simple-memory.model";
 export class MemoryFormComponent implements OnInit {
 
   form!: FormGroup;
+  @Input() memory: MemoryModel | undefined;
   @Output() createMemory: EventEmitter<SimpleMemoryModel> = new EventEmitter<SimpleMemoryModel>();
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      title: ['', Validators.required],
-      description: ['', Validators.required]
+      title: [this.memory?.title || '', Validators.required],
+      description: [this.memory?.description || '', Validators.required]
     })
   }
 
