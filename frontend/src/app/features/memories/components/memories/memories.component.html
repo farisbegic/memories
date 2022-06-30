@@ -1,7 +1,7 @@
 <div>
-  <p *ngIf="data.length == 0">No data</p>
+  <p *ngIf="data?.length == 0">No data</p>
   <div class="memories-container">
-    <button mat-raised-button color="primary" routerLink="/memories/add">Add a memory</button>
+    <button mat-raised-button color="primary" routerLink="/add">Add a memory</button>
     <div class="memories-list">
       <mat-card class="example-card" *ngFor="let memory of data">
         <mat-card-title>{{memory.title}}</mat-card-title>

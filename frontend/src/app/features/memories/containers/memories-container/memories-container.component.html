@@ -1,1 +1,1 @@
-<app-memories [data]="data" (deleteMemory)="deleteMemory($event)"></app-memories>
+<app-memories [data]="data | async" (deleteMemory)="deleteMemory($event)"></app-memories>

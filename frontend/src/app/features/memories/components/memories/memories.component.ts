@@ -7,7 +7,7 @@ import {MemoryModel} from "../../../../models/memory.model";
   styleUrls: ['./memories.component.css']
 })
 export class MemoriesComponent implements OnInit {
-  @Input() data: MemoryModel[] = [];
+  @Input() data: any = [];
   @Output() deleteMemory: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }

@@ -1,9 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import { environment } from 'src/environments/environment.prod';
+import {environment} from 'src/environments/environment.prod';
 import {MemoryModel} from "../models/memory.model";
 import {SimpleMemoryModel} from "../models/simple-memory.model";
-import {Observable, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +10,6 @@ import {Observable, Subject} from "rxjs";
 export class MemoryService {
 
   private apiUrl = `${environment.apiUrl}/memories`;
-  private _deleteOperationSuccessfulEvent$: Subject<boolean> = new Subject();
 
   constructor(private httpClient: HttpClient) { }
 
